@@ -23,7 +23,9 @@ class: center, middle
 # Problem: Building low latency client-server/server-client applications
 
  * The web is largely built around the request-response paradigm of HTTP.
- * Common hack is to use `long-polling` - client requests and the server holds the connection open until a response is sent.
+ * Common hack is to use `long-polling`
+ * Long polling means that the browser simply initiates an HTTP request whose connec- tion the server intentionally leaves open. The browser will simply wait for the server to “push” a response whenever an update is available. After the server sends a response and closes the connection, (or if the client request times out on the browser side) the client simply opens a new connection and waits for the next update.
+
  * [Polling, Long-Polling, Streaming, Web Sockets](http://www.websocket.org/quantum.html)
 
 ---
